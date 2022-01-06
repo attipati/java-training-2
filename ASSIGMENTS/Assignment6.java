@@ -68,11 +68,13 @@ class Order{
     public void displayOrder(){
         System.out.printf("Order Id: %d                      Customer Name: %s %n",orderId,customerName);
         System.out.println("-----------------------------------------------------------------");
-        System.out.printf("ITEMS                 QUANTITY     PRICE          TOTALCOST   \n ");
+        System.out.printf("ITEMS             QUANTITY     PRICE          TOTALCOST   \n ");
         System.out.println("-----------------------------------------------------------------");
         for(Item item:items){
-            System.out.printf("%30s %d %4.2f %4.2f  %n",item.getItemName(),item.getQuantity(),item.getPrice(),item.getTotalCost());
+            System.out.printf("%-20s %-10d %-14.2f %4.2f  %n",item.getItemName(),item.getQuantity(),item.getPrice(),item.getTotalCost());
         }
+        System.out.println("------------------------------------------------------------------");
+        System.out.printf("Net Total:%f",+netTotal);
     }
 
 
