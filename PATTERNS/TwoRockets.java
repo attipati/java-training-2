@@ -15,20 +15,44 @@ public class TwoRockets{
         duplicatePattern();
        
         for(int i=1;i<=3;i++){
-            System.out.println("    +---------+");
+            for(int k=1;k<=2;k++){
+            System.out.print("    +---------+");
+            }
+        
+        System.out.println();
             if(i%2==0){
+                for(int k=1;k<=2;k++){
 
-            System.out.println("    |  united |");
-            System.out.println("    |  states |");
+            System.out.print("    |  united |");
+                }
+                System.out.println();
+                for(int k=1;k<=2;k++){
+
+            System.out.print("    |  states |");
+                }
+                System.out.println();
+
             }
             else{
+                for(int k=1;k<=2;k++){
 
-                System.out.println("    |         |");
-                System.out.println("    |         |");
+                System.out.print("    |         |");
                 }
-        }
-        System.out.println("    +---------+");
+                System.out.println();
+                for(int k=1;k<=2;k++){
+                System.out.print("    |         |");
+                }
+                System.out.println();
+                }
+      }
+      for(int k=1;k<=2;k++){
+        System.out.print("    +---------+");
+      }
+      System.out.println();
+      
         duplicatePattern();
+      
+        
     
 
 
@@ -39,9 +63,18 @@ public class TwoRockets{
     }
 
     public static void duplicatePattern() {
-            System.out.println("       /  \\     ");
-            System.out.println("      /    \\");
-            System.out.println("     /      \\");
+        for(int k=1;k<=2;k++){
+            System.out.print("       /  \\     ");
+        }
+        System.out.println();
+        for(int k=1;k<=2;k++){
+            System.out.print("      /    \\");
+        }
+        System.out.println();
+        for(int k=1;k<=2;k++){
+            System.out.print("     /      \\");
+        }
+        System.out.println();
     }
 
 }
