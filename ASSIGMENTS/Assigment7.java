@@ -1,12 +1,13 @@
 package ASSIGMENTS;
 
-import java.io.PrintStream;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
+
 
 public class Assigment7 {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         dateFormat();
         
     }
@@ -32,6 +33,7 @@ public static void dateFormat(){
 
 
     System.out.println(dateFrom+" is "+dateFrom.getDayOfWeek());
+
     }
     
 }
