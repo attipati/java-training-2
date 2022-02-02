@@ -3,6 +3,7 @@ package com.dxc.libraryrestapp.controllers;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Id;
 
 import com.dxc.libraryrestapp.model.Book;
 import com.dxc.libraryrestapp.services.BookService;
@@ -44,7 +45,7 @@ public class BookController {
     }
 
     @PutMapping("bookss/{id}")
-    public Book updateBook(@PathVariable Book book){
+    public Book updateBook(@RequestBody Book book , @PathVariable int id){
         return bookService.updateBook(book);
     }
 
