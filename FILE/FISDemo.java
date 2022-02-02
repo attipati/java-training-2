@@ -1,4 +1,4 @@
-package ASSIGMENTS.FILE;
+package FILE;
 import java.io.*;
 public class FISDemo{
     public static void main(String[] args) throws IOException {

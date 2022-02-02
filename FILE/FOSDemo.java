@@ -1,4 +1,4 @@
-package ASSIGMENTS.FILE;
+package FILE;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
