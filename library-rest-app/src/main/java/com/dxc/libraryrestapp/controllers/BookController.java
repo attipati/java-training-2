@@ -3,13 +3,19 @@ package com.dxc.libraryrestapp.controllers;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.Id;
 
+import javax.validation.Valid;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+
+import com.dxc.libraryrestapp.dto.BookDto;
 import com.dxc.libraryrestapp.model.Book;
 import com.dxc.libraryrestapp.services.BookService;
 import org.modelmapper.ModelMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,14 +34,19 @@ public class BookController {
     private ModelMapper modelMapper;
     
     @GetMapping("/books") 
-    public List<Book> getAllBooks(){
-        return bookService.getAllBooks();
+    public ResponseEntity<List<Book>> getAllBooks(){
+        List<Book> books= bookService.getAllBooks();
+        return ResponseEntity.status(HttpStatus.OK).body(books);
     }
 
     @PostMapping("/books")
-    public Book createBook(@RequestBody Book book){
+    public ResponseEntity<Book> createBook(@ Valid @RequestBody BookDto bookReqObj, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+        Book book=modelMapper.map(bookReqObj,Book.class);
         book.setPublicationDate(LocalDate.now());
-        return bookService.createBook(book);
+        return ResponseEntity.status(HttpStatus.CREATED).body(book);
 
     }
 
